@@ -68,3 +68,14 @@ class Sbi:
             minimum_bal = int(input('Enter the amount : '))
 
             var = cls(name,age,phone,pin,address,minimum_bal)
+
+    @classmethod
+    def user_balance(cls):
+        print('--------------------------  BALANCE PAGE  --------------------------')
+        user_acc_num = int(input('Enter your account_num : '))
+        user_pin = int(input('Enter your 4-digit pin  : '))
+
+        if user_acc_num in cls.customer_data and cls.customer_data[user_acc_num].pin == user_pin:
+            print(f'Your current balance is {cls.customer_data[user_acc_num].balance}')
+        else:
+            raise Exception('INVALID USER')
