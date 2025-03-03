@@ -50,3 +50,21 @@ class Sbi:
             return pin_num
         else:
             raise Exception('INVALID PIN')
+        
+    @classmethod
+    def create_account(cls):
+        aadhar_number = int(input('ENTER 12-DIGIT AADHAR NUMBER : '))
+
+        for acc_num in cls.customer_data:
+            if aadhar_number == cls.customer_data[acc_num].aadhar:
+                print('Aadhar number already exists')
+                break
+        else:
+            name = input('Enter your name : ')
+            age = int(input('Enter your age : '))
+            phone = int(input('Enter your 10-digit phone number : '))
+            pin = int(input('Enter 4-digit pin number : '))
+            address = input('Enter your address  : ')
+            minimum_bal = int(input('Enter the amount : '))
+
+            var = cls(name,age,phone,pin,address,minimum_bal)
