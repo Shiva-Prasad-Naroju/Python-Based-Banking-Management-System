@@ -37,3 +37,16 @@ class Sbi:
             return phone_num
         else:
             raise Exception('INVALID NUMBER')
+        
+    @staticmethod
+    def validate_aadhar(aadhar_num):
+        if len(str(aadhar_num)) == 12 and str(aadhar_num).isdigit():
+            return aadhar_num
+        else:
+            raise Exception('INVALID AADHAR NUMBER')
+    @staticmethod
+    def validate_pin(pin_num):
+        if len(str(pin_num)) == 4 and str(pin_num).isdigit():
+            return pin_num
+        else:
+            raise Exception('INVALID PIN')
